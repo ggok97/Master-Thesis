@@ -153,6 +153,7 @@ def test1(): #MH distance query.
     expr8=gp.LinExpr(11)
     expr9=gp.LinExpr(-21)
     expr10=gp.LinExpr(-21)
+    expr11=gp.LinExpr(39/2+7)
 
     index_expr=[0]*12
     index_expr[0]=(expr1,"<=","0",False,'w')
@@ -165,17 +166,19 @@ def test1(): #MH distance query.
     index_expr[7]=(expr8,"<=","pos_y",False,'w')
     index_expr[8]=(expr9,"<=","pos_x",False,'w')
     index_expr[9]=(expr10,">=","pos_x",False,'w')
+    index_expr[10]=(expr11,"<=","age",False,'w')
 
-    start_tuple_gp=('!','!','?','?','?','?','?','?','?','?')
+
+    start_tuple_gp=('!','!','?','?','?','?','?','?','?','?','?')
 
     yt_mh_q1=State(1,False)
     yt_mh_q2=State(2,True)
 
     yt_mh_t1=Transition(yt_mh_q1,yt_mh_q1,"A",[],[])
-    yt_mh_t2=Transition(yt_mh_q1,yt_mh_q2,"A",[0,1,2,4,6,9],[])
-    yt_mh_t3=Transition(yt_mh_q1,yt_mh_q2,"A",[0,1,2,5,7,9],[])
-    yt_mh_t4=Transition(yt_mh_q1,yt_mh_q2,"A",[0,1,3,4,6,8],[])
-    yt_mh_t5=Transition(yt_mh_q1,yt_mh_q2,"A",[0,1,3,5,7,8],[])
+    yt_mh_t2=Transition(yt_mh_q1,yt_mh_q2,"A",[0,1,2,4,6,9,10],[])
+    yt_mh_t3=Transition(yt_mh_q1,yt_mh_q2,"A",[0,1,2,5,7,9,10],[])
+    yt_mh_t4=Transition(yt_mh_q1,yt_mh_q2,"A",[0,1,3,4,6,8,10],[])
+    yt_mh_t5=Transition(yt_mh_q1,yt_mh_q2,"A",[0,1,3,5,7,8,10],[])
 
     yt_mh_q1.add_transition(yt_mh_t1)
     yt_mh_q1.add_transition(yt_mh_t2)
@@ -223,7 +226,7 @@ def test2():
     end_time=time.time()
     print(end_time-start_time)
 
-test2()
+#test2()
 
 
 
