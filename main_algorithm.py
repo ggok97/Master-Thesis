@@ -176,7 +176,7 @@ def dfs_QLA_with_stack(node,state,tup,path_t,model,index_expr):
         #print(model.display())
         res= model.status==GRB.INFEASIBLE
         if curr[1].final and not res:
-            print(curr[0].properties["name"],curr[0].properties["pos_x"],curr[0].properties["pos_y"])
+            print(curr[0].properties["name"],curr[0].properties["age"],curr[0].properties["pos_x"],curr[0].properties["pos_y"])
             #print("PATH:")
             # for l in stackk:
             #     v=l[0]
